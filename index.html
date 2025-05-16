@@ -11,26 +11,35 @@ background-image: url('https://media.tenor.com/aV0h3VAHWUAAAAAM/gradient.gif');
     -->
     <link rel="icon" href="https://iili.io/2EsNmUx.png" type="image/png">
     <style>
- html,  body {
-          
- overflow: auto;
-      height: 100%;
-       height: 100vh;
-          
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center; 
-    margin: 0;
-      padding: 0;
-    }
+html, body {
+  overflow: auto;
+  height: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+}
 
-
-    .scrollable-section {
-  overflow: auto;         /* Enables both horizontal and vertical scrolling */
-  max-height: 100%;      /* Adjust as needed */
-  max-width: 100%;        /* Adjust as needed */
-  /* Optional: for mobile responsiveness */
+.scrollable-section {
+  overflow: auto;
+  max-height: 100vh;
+  max-width: 100vw;
   -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+}
+
+/* Ensure body takes full viewport on mobile */
+@media (max-width: 600px) {
+  html, body {
+    height: 100vh;
+    min-height: 100vh;
+  }
+  .scrollable-section {
+    max-height: 100vh;
+    max-width: 100vw;
+  }
 }
   </style>
 
